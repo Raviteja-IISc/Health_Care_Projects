@@ -13,7 +13,7 @@ def show_explore_page():
     )
 
 
-    dataset = pd.read_csv('heart-disease.csv')
+    dataset = pd.read_csv('Heart_Disease_Prediction/heart-disease.csv')
     df=dataset
 
     # Plot the value counts with a bar graph
