@@ -15,12 +15,6 @@ data =load_model()
 
 clf_log_reg=data["model"]
 
-page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
-
-if page == "Predict":
-    show_predict_page()
-elif page=="Explore":
-    show_explore_page()   
 
 def show_predict_page():
     st.title("Heart Diesease predictor")
@@ -53,30 +47,6 @@ def show_predict_page():
         else:
             st.subheader("No problem")        
 
-import matplotlib.pyplot as plt
-
-
-def show_explore_page():
-    st.title("Exploratory Data Analysis")
-
-    st.write(
-
-        "Percentage of the people having heart disease"
-    )
-
-
-    dataset = pd.read_csv('heart-disease.csv')
-    df=dataset
-
-    # Plot the value counts with a bar graph
-    fig1, ax1 = plt.subplots()
-    data=df.target.value_counts()
-    ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow=True, startangle=90)
-    ax1.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-    st.write("""#### Having disease(1) Vs No disease (0)""")
-
-    st.pyplot(fig1)
 
         
     
