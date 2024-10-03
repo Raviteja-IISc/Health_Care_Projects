@@ -5,7 +5,7 @@ import numpy as np
 
 
 def load_model():
-    with open('saved_steps.pkl','rb') as file:
+    with open('Heart_Disease_Prediction/saved_steps.pkl','rb') as file:
         data=pickle.load(file)
         #data=joblib.load('Streamlit/saved_steps.pkl')
     return data
