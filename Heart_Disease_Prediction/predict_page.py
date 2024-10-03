@@ -12,6 +12,12 @@ data =load_model()
 
 clf_log_reg=data["model"]
 
+page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
+
+if page == "Predict":
+    show_predict_page()
+elif page=="Explore":
+    show_explore_page()   
 
 def show_predict_page():
     st.title("Heart Diesease predictor")
